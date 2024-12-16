@@ -20,8 +20,16 @@ int menu() {
 void registrarLibros(struct Libro libros[], int *cantidad) {
     int id;
     printf("\n--- Registrar Libro ---\n");
-    printf("Ingrese el ID del libro: ");
+    do
+    {
+        printf("Ingrese el ID del libro: ");
     scanf("%d", &id);
+      if (id<0)
+    {
+        printf ("JASKJKJADJK se equivoco, intentalo de nuevo...\n");
+    }
+    } while (id<0);
+
     for (int i = 0; i < *cantidad; i++) {
         if (libros[i].id == id) {
             printf("Error: El ID ingresado ya existe.\n");
